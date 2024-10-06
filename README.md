@@ -41,11 +41,9 @@ This project is a Django-based API for managing insurance customers, policies, a
 
 
 ## API Endpoints
-
-    To interact with the API endpoints, one can use tools like cURL, Postman, or any HTTP client or the below django rest client.
-    ```
+   To interact with the API endpoints, one can use tools like cURL, Postman, or any HTTP client or the below django rest client.
+    
     http://127.0.0.1:8000/api/v1/
-    ```
 
 ### Customer
 
