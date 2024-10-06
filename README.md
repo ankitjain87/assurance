@@ -22,10 +22,21 @@ This project is a Django-based API for managing insurance customers, policies, a
    make all
    ```
 
-2. To run the tests:
+2. To create super user (Default credentials: admin/admin):
+   ```
+   make createsuperuser
+   ```
+
+3. To run the django server:
+   ```
+   make run
+   ```
+
+4. To run the tests:
    ```
    make test
    ```
+
 
 
 
