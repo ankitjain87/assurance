@@ -1,0 +1,70 @@
+# Ignore Python bytecode and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore the virtual environment folder
+assurance_env/
+.venv/
+.env/
+env/
+*.env
+.mypy_cache/
+
+# Ignore database files
+db.sqlite3
+*.sqlite3
+
+# Ignore Django migration files
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Ignore media and static files
+/media/*
+/static/*
+!static/.gitkeep
+
+# Ignore IDE/editor config files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+
+# Ignore backup files
+*.bak
+*.tmp
+*.old
+*.log
+
+# Ignore coverage and test results
+.coverage
+coverage.xml
+nosetests.xml
+test-results/
+
+# Ignore macOS-specific files
+.DS_Store
+
+# Ignore deployment config files
+*.log
+*.pot
+*.mo
+
+# Ignore the node_modules folder (if using Node.js)
+node_modules/
+npm-debug.log
+yarn-error.log
