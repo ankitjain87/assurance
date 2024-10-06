@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.contrib.auth.models import Group, User
 from django.db.models import Q
-from rest_framework import permissions, viewsets, status
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import Customer, Policy, PolicyStateHistory
@@ -22,7 +22,6 @@ class CustomerViewSet(viewsets.ModelViewSet):
 
     queryset = Customer.objects.all().order_by("-created_at")
     serializer_class = CustomerSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
     @action(detail=False, methods=["get"], url_path="search")
     def search(self, request):
@@ -75,7 +74,6 @@ class PolicyViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    permission_classes = [permissions.IsAuthenticated]
 
     @action(detail=True, methods=["put"], url_path="pay")
     def pay(self, request, *args, **kwargs):
@@ -110,7 +108,6 @@ class PolicyListViewSet(viewsets.ModelViewSet):
 
     queryset = Policy.objects.all().order_by("-created_at")
     serializer_class = PolicySerializer
-    permission_classes = [permissions.IsAuthenticated]
 
     def list(self, request):
         """

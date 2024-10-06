@@ -53,6 +53,11 @@ makemigrations: venv
 	@echo "Creating database migrations..."
 	@$(VENV_ACTIVATE) && $(MANAGE) makemigrations
 
+# Create Django superuser with default credentials
+createsuperuser: venv
+    @echo "Creating Django superuser with default credentials..."
+    @$(VENV_ACTIVATE) && $(MANAGE) shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'admin') if not User.objects.filter(username='admin').exists() else print('Superuser already exists')"
+
 # Open Django shell
 shell: venv
 	@echo "Opening Django shell..."
@@ -84,3 +89,5 @@ help:
 	@echo "  make clean         - Clean up cached Python files and virtual environment"
 	@echo "  make all           - Create venv, setup, install, migrate, and run the project"
 	@echo "  make help          - Show this help message"
+	@echo "  make createsuperuser - Create Django superuser with default credentials"
+
