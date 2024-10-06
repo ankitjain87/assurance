@@ -55,8 +55,8 @@ makemigrations: venv
 
 # Create Django superuser with default credentials
 createsuperuser: venv
-    @echo "Creating Django superuser with default credentials..."
-    @$(VENV_ACTIVATE) && $(MANAGE) shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'admin') if not User.objects.filter(username='admin').exists() else print('Superuser already exists')"
+	@echo "Creating Django superuser with default credentials..."
+	@$(VENV_ACTIVATE) && $(MANAGE) shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'admin') if not User.objects.filter(username='admin').exists() else print('Superuser already exists')"
 
 # Open Django shell
 shell: venv
